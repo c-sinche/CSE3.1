@@ -3,7 +3,7 @@ my_history and their_history are strings of the same length, perhaps length zero
 """
 import random
 
-strategy_name = "start with scissors and alternate"
+strategy_name = "start with random and use previous moves"
 
 def move(my_history, their_history):
     pick = random.choice(["r", "p", "s"])
@@ -19,9 +19,9 @@ def move(my_history, their_history):
         return "s"
 
     else:
-        if their_history[-2] == "p":
+        if their_history[-1] == "p":
             return "s"
-        elif their_history[-2] == "r":
+        elif their_history[-1] == "r":
             return "p"
         else:
             return "r"
